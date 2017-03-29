@@ -1,0 +1,14 @@
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\bin\Debug\ClockAndAlarm.exe.config
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\bin\Debug\ClockAndAlarm.exe
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\bin\Debug\ClockAndAlarm.pdb
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.csprojResolveAssemblyReference.cache
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\MainWindow.g.cs
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\App.g.cs
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm_MarkupCompile.cache
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm_MarkupCompile.lref
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\MainWindow.baml
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.g.resources
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.Properties.Resources.resources
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.csproj.GenerateResource.Cache
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.exe
+C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.pdb
