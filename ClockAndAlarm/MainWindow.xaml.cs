@@ -33,7 +33,7 @@ namespace ClockAndAlarm
 			if (_listOfAlarms.Count != 0)
 			{
 				var indexOfLastAlarm = _listOfAlarms.Count - 1;
-				if (string.Equals(DateTime.Now.ToString(), _listOfAlarms[indexOfLastAlarm].ToString()))
+				if (DateTime.Now.Equals(_listOfAlarms[indexOfLastAlarm]))
 				{
 					_listOfAlarms.Remove(_listOfAlarms[indexOfLastAlarm]);
 					SortDate();

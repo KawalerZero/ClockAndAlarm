@@ -12,3 +12,6 @@ C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\Cloc
 C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.csproj.GenerateResource.Cache
 C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.exe
 C:\Users\Adam\Desktop\WPFApplications\ClockAndAlarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.pdb
+C:\Users\Adam\Desktop\WPFApplications\Clock&Alarm\ClockAndAlarm\bin\Debug\ClockAndAlarm.exe.config
+C:\Users\Adam\Desktop\WPFApplications\Clock&Alarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.exe
+C:\Users\Adam\Desktop\WPFApplications\Clock&Alarm\ClockAndAlarm\obj\Debug\ClockAndAlarm.pdb
