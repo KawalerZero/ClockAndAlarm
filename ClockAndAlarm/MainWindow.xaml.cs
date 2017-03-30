@@ -10,21 +10,24 @@ namespace ClockAndAlarm
 	public partial class MainWindow : Window
 	{
 		private List<DateTime> _listOfAlarms = new List<DateTime>();
-		private List<DispatcherTimer> _listOfDispatcherTimerForAlarm = new List<DispatcherTimer>();
-		private DispatcherTimer _dispatcherTimerForDateAndTime;
+		private List<DispatcherTimer> _listOfTimersForAlarm = new List<DispatcherTimer>();
+		private DispatcherTimer _timerForDateAndTime;
 
 		public MainWindow()
 		{
 			InitializeComponent();
-			_dispatcherTimerForDateAndTime = new DispatcherTimer();
-			_dispatcherTimerForDateAndTime.Tick += new EventHandler(DispatcherTimer_Tick);
-			_dispatcherTimerForDateAndTime.Interval = new TimeSpan(0, 0, 1);
-			_dispatcherTimerForDateAndTime.Start();
+			InitializeTimerForDateAndTime();
 		}
-
-		private void DispatcherTimer_Tick(object sender, EventArgs e)
+		private void InitializeTimerForDateAndTime()
 		{
-			DataLabel.Content = "Data: " + DateTime.Now.ToShortDateString();
+			_timerForDateAndTime = new DispatcherTimer();
+			_timerForDateAndTime.Tick += new EventHandler(ChangeDateAndTime);
+			_timerForDateAndTime.Interval = new TimeSpan(0, 0, 1);
+			_timerForDateAndTime.Start();
+		}
+		private void ChangeDateAndTime(object sender, EventArgs e)
+		{
+			DateLabel.Content = "Date: " + DateTime.Now.ToShortDateString();
 			TimeLabel.Content = "Time: " + DateTime.Now.ToLongTimeString();
 		}
 
@@ -36,13 +39,13 @@ namespace ClockAndAlarm
 				if (DateTime.Now.Equals(_listOfAlarms[indexOfLastAlarm]))
 				{
 					_listOfAlarms.Remove(_listOfAlarms[indexOfLastAlarm]);
-					SortDate();
+					SortDescendingListOfAlarmsByDate();
 					UpdateListAlarm();
-					_listOfDispatcherTimerForAlarm.Remove(_listOfDispatcherTimerForAlarm[0]);
-					var indexofLastDispatcher = _listOfDispatcherTimerForAlarm.Count - 1;
+					_listOfTimersForAlarm.Remove(_listOfTimersForAlarm[0]);
+					var indexofLastDispatcher = _listOfTimersForAlarm.Count - 1;
 					if (indexofLastDispatcher >= 0)
 					{
-						_listOfDispatcherTimerForAlarm[0].Start();
+						_listOfTimersForAlarm[0].Start();
 					}
 					MessageBox.Show("Alarm on " + DateTime.Now.ToString());
 				}
@@ -56,7 +59,7 @@ namespace ClockAndAlarm
 			if (DateTime.TryParse(date, out newAlarm) && newAlarm > DateTime.Now)
 			{
 				_listOfAlarms.Add(newAlarm);
-				SortDate();
+				SortDescendingListOfAlarmsByDate();
 				UpdateListAlarm();
 				CreateNewDispatcherTimer();
 			}
@@ -71,15 +74,15 @@ namespace ClockAndAlarm
 			var dispatcherTimer = new DispatcherTimer();
 			dispatcherTimer.Tick += new EventHandler(AlarmCheck);
 			dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-			_listOfDispatcherTimerForAlarm.Add(dispatcherTimer);
-			var lastIndexOfDispatcherTimers = _listOfDispatcherTimerForAlarm.Count;
+			_listOfTimersForAlarm.Add(dispatcherTimer);
+			var lastIndexOfDispatcherTimers = _listOfTimersForAlarm.Count;
 			if (lastIndexOfDispatcherTimers == 1)
 			{
-				_listOfDispatcherTimerForAlarm[lastIndexOfDispatcherTimers - 1].Start();
+				_listOfTimersForAlarm[lastIndexOfDispatcherTimers - 1].Start();
 			}
 		}
 
-		private void SortDate()
+		private void SortDescendingListOfAlarmsByDate()
 		{
 			_listOfAlarms = _listOfAlarms.OrderByDescending(x => x.Date).ThenByDescending(x => x.TimeOfDay).ToList();
 		}

@@ -43,7 +43,7 @@ namespace ClockAndAlarm {
         
         #line 23 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label DataLabel;
+        internal System.Windows.Controls.Label DateLabel;
         
         #line default
         #line hidden
@@ -111,7 +111,7 @@ namespace ClockAndAlarm {
             switch (connectionId)
             {
             case 1:
-            this.DataLabel = ((System.Windows.Controls.Label)(target));
+            this.DateLabel = ((System.Windows.Controls.Label)(target));
             return;
             case 2:
             this.TimeLabel = ((System.Windows.Controls.Label)(target));

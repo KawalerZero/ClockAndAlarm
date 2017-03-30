@@ -20,7 +20,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <DockPanel Grid.Row="0">
-                <Label Name="DataLabel"
+                <Label Name="DateLabel"
                        FontFamily="Times New Roman"
                        FontSize="40">
                     Data:
