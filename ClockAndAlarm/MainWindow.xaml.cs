@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -33,23 +34,19 @@ namespace ClockAndAlarm
 
 		private void AlarmCheck(object sender, EventArgs e)
 		{
-			if (_listOfAlarms.Count != 0)
+			if (_listOfAlarms.Count == 0) return;
+			var indexOfLastAlarm = _listOfAlarms.Count - 1;
+			if (DateTime.Compare(DateTime.Now, _listOfAlarms[indexOfLastAlarm]) < 0) return;
+			_listOfAlarms.Remove(_listOfAlarms[indexOfLastAlarm]);
+			SortDescendingListOfAlarmsByDate();
+			UpdateListAlarm();
+			_listOfTimersForAlarm.Remove(_listOfTimersForAlarm[0]);
+			var indexofLastDispatcher = _listOfTimersForAlarm.Count - 1;
+			if (indexofLastDispatcher >= 0)
 			{
-				var indexOfLastAlarm = _listOfAlarms.Count - 1;
-				if (DateTime.Now.Equals(_listOfAlarms[indexOfLastAlarm]))
-				{
-					_listOfAlarms.Remove(_listOfAlarms[indexOfLastAlarm]);
-					SortDescendingListOfAlarmsByDate();
-					UpdateListAlarm();
-					_listOfTimersForAlarm.Remove(_listOfTimersForAlarm[0]);
-					var indexofLastDispatcher = _listOfTimersForAlarm.Count - 1;
-					if (indexofLastDispatcher >= 0)
-					{
-						_listOfTimersForAlarm[0].Start();
-					}
-					MessageBox.Show("Alarm on " + DateTime.Now.ToString());
-				}
+				_listOfTimersForAlarm[0].Start();
 			}
+			MessageBox.Show("Alarm on " + DateTime.Now.ToString(CultureInfo.CurrentCulture));
 		}
 
 		private void CreateAlarm(object sender, RoutedEventArgs e)
@@ -88,10 +85,10 @@ namespace ClockAndAlarm
 		}
 		private void UpdateListAlarm()
 		{
-			StringBuilder content = new StringBuilder();
-			foreach (DateTime dateTime in _listOfAlarms)
+			var content = new StringBuilder();
+			foreach (var dateTime in _listOfAlarms)
 			{
-				content.AppendLine(dateTime.ToString());
+				content.AppendLine(dateTime.ToString(CultureInfo.CurrentCulture));
 			}
 			AlarmListLabel.Content = content.ToString();
 		}
