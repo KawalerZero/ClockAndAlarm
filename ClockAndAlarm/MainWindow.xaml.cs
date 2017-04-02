@@ -19,6 +19,7 @@ namespace ClockAndAlarm
 			InitializeComponent();
 			InitializeTimerForDateAndTime();
 		}
+
 		private void InitializeTimerForDateAndTime()
 		{
 			_timerForDateAndTime = new DispatcherTimer();
@@ -26,6 +27,7 @@ namespace ClockAndAlarm
 			_timerForDateAndTime.Interval = new TimeSpan(0, 0, 1);
 			_timerForDateAndTime.Start();
 		}
+
 		private void ChangeDateAndTime(object sender, EventArgs e)
 		{
 			DateLabel.Content = "Date: " + DateTime.Now.ToShortDateString();

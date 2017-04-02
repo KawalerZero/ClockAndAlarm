@@ -40,12 +40,12 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid>
-                <Grid Grid.Column="0">
+                <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Grid>
+                    <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="75" />
                             <ColumnDefinition />
@@ -55,11 +55,9 @@
                         <TextBox Name="TextBoxNewAlarm" Grid.Column="1" />
                         <Button Name="BtnCreateAlarm"
                                 Grid.Column="2"
-                                HorizontalAlignment="Right"
                                 Click="CreateAlarm">
                             Create Alarm
                         </Button>
-
                     </Grid>
                     <Label Grid.Row="1"
                            HorizontalAlignment="Center"
